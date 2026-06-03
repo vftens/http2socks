@@ -17,7 +17,7 @@ Run this script on the same machine — point Telegram Mobile at it as a SOCKS5 
 Edit the constants at the top of `http2socks.py`:
 
 ```python
-HTTP_PROXY_HOST = "45.81.227.97"  # your HTTP proxy host
+HTTP_PROXY_HOST = "*"  # your HTTP proxy host
 HTTP_PROXY_PORT = 8888             # your HTTP proxy port
 
 LISTEN_HOST = "0.0.0.0"           # listen on all interfaces
