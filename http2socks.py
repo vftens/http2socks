@@ -13,7 +13,7 @@ import struct
 import socket
 
 # ── CONFIGURE HERE ────────────────────────────────────────────────
-HTTP_PROXY_HOST = "45.81.227.97" # 127.0.0.1"   # <-- your HTTP proxy host
+HTTP_PROXY_HOST = "*.*.*.*" # 127.0.0.1"   # <-- your HTTP proxy host
 HTTP_PROXY_PORT = 8888           # <-- your HTTP proxy port
 
 LISTEN_HOST = "0.0.0.0"         # listen on all interfaces
