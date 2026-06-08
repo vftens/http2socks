@@ -1,0 +1,12 @@
+# Android build artifacts (Buildozer / python-for-android)
+android/.buildozer/
+android/.venv/
+android/bin/
+*.apk
+
+# Build logs
+android/buildozer_build*.log
+
+# Python
+__pycache__/
+*.pyc
