@@ -53,6 +53,22 @@ buildozer -v android debug
 > системных зависимостей (SDK, NDK, JDK, build tools) уже закэшированы,
 > и эта сборка пройдёт значительно быстрее — обычно за пару минут.
 
+### Системные пакеты (если собираете "с нуля")
+
+На свежем Ubuntu/WSL перед сборкой может понадобиться установить (через
+`sudo apt install ...`):
+
+```
+python3-pip python3-venv git zip unzip openjdk-17-jdk-headless
+autoconf automake libtool m4 gcc g++ make python3-dev
+zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+liblzma-dev tk-dev
+```
+
+Buildozer сам подскажет, какого пакета не хватает, если что-то
+отсутствует — просто запускайте `buildozer -v android debug` ещё раз
+после установки недостающего пакета.
+
 ## Установка
 
 ```bash

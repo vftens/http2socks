@@ -49,6 +49,43 @@ Telegram Mobile:
 лежит в [`android/`](android/) — инструкции по сборке/установке (Kivy +
 Buildozer) см. в [`android/README_ANDROID.md`](android/README_ANDROID.md).
 
+### Как собрать .apk
+
+Buildozer (инструмент, который упаковывает Kivy-приложение в `.apk`)
+работает только под Linux — на Windows нужен **WSL** (Windows Subsystem
+for Linux) или Linux-VM/контейнер. Первая сборка скачивает Android
+SDK/NDK (несколько гигабайт), поэтому может занять много времени;
+последующие сборки используют кэш и проходят гораздо быстрее.
+
+```bash
+# 1. Откройте оболочку WSL/Linux и перейдите в папку android/
+cd android
+
+# 2. Создайте виртуальное окружение и установите инструменты сборки
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install buildozer cython
+
+# 3. Соберите debug-APK (при первом запуске сама скачает SDK/NDK)
+buildozer -v android debug
+```
+
+Системные пакеты, которые, скорее всего, понадобятся на свежем
+Ubuntu/WSL (ставятся командой `sudo apt install ...`): `python3-pip`,
+`python3-venv`, `git`, `zip unzip`, `openjdk-17-jdk-headless`,
+`autoconf automake libtool m4`, `gcc g++ make python3-dev`,
+`zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+liblzma-dev tk-dev`.
+
+По завершении сборки APK появится в
+`android/bin/http2socks-1.0-arm64-v8a-debug.apk`. Скопируйте его на
+телефон и нажмите для установки (предварительно разрешив «Установка
+из неизвестных источников»), либо выполните `buildozer android deploy
+run` при подключённом по USB телефоне.
+
+Подробности см. в [`android/README_ANDROID.md`](android/README_ANDROID.md).
+
 ## Как это работает
 
 1. Принимает рукопожатие SOCKS5 `CONNECT` (без авторизации, IPv4 / IPv6 / домен).
