@@ -2,10 +2,14 @@
 android/.buildozer/
 android/.venv/
 android/bin/
+superpuperproxy_android/.buildozer/
+superpuperproxy_android/.venv/
+superpuperproxy_android/bin/
 *.apk
 
 # Build logs
 android/buildozer_build*.log
+superpuperproxy_android/buildozer_build*.log
 
 # Python
 __pycache__/
