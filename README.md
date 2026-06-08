@@ -39,6 +39,12 @@ Settings → Data and Storage → Proxy → Add Proxy
   Port:   1080
 ```
 
+## Android version
+
+A packaged Android app (APK) with its own icon and a Start/Stop UI lives in
+[`android/`](android/) — see [`android/README_ANDROID.md`](android/README_ANDROID.md)
+for build/install instructions (Kivy + Buildozer).
+
 ## How it works
 
 1. Accepts a SOCKS5 `CONNECT` handshake (no auth, IPv4 / IPv6 / domain).
