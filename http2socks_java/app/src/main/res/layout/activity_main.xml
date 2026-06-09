@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a2e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="http2socks"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#7b68ee"
+            android:gravity="center"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HTTP proxy → SOCKS5 bridge"
+            android:textSize="13sp"
+            android:textColor="#aaaaaa"
+            android:gravity="center"
+            android:paddingBottom="24dp"/>
+
+        <!-- HTTP Proxy Host -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upstream HTTP proxy host:"
+            android:textColor="#cccccc"
+            android:textSize="14sp"/>
+        <EditText
+            android:id="@+id/et_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*.*.*.*"
+            android:textColor="#ffffff"
+            android:backgroundTint="#3a3a5c"
+            android:inputType="text"
+            android:singleLine="true"
+            android:nextFocusDown="@+id/et_port"
+            android:padding="10dp"/>
+
+        <!-- HTTP Proxy Port -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upstream HTTP proxy port:"
+            android:textColor="#cccccc"
+            android:textSize="14sp"
+            android:paddingTop="12dp"/>
+        <EditText
+            android:id="@+id/et_port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8888"
+            android:textColor="#ffffff"
+            android:backgroundTint="#3a3a5c"
+            android:inputType="number"
+            android:singleLine="true"
+            android:nextFocusDown="@+id/et_listen_port"
+            android:padding="10dp"/>
+
+        <!-- Listen Port -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SOCKS5 listen port (set this in Telegram Mobile):"
+            android:textColor="#cccccc"
+            android:textSize="14sp"
+            android:paddingTop="12dp"/>
+        <EditText
+            android:id="@+id/et_listen_port"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1080"
+            android:textColor="#ffffff"
+            android:backgroundTint="#3a3a5c"
+            android:inputType="number"
+            android:singleLine="true"
+            android:padding="10dp"/>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="20dp">
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="▶  START"
+                android:textColor="#ffffff"
+                android:backgroundTint="#4444cc"
+                android:focusable="true"/>
+            <View android:layout_width="12dp" android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="■  STOP"
+                android:textColor="#ffffff"
+                android:backgroundTint="#cc4444"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- Status log -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Idle. Enter proxy settings and press START."
+            android:textColor="#88ff88"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:paddingTop="20dp"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+</ScrollView>

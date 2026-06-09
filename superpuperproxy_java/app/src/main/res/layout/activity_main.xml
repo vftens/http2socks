@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a0a2e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SuperPuperProxy"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#c06aff"
+            android:gravity="center"
+            android:paddingBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YouTube on Android TV → any upstream proxy"
+            android:textSize="12sp"
+            android:textColor="#aaaaaa"
+            android:gravity="center"
+            android:paddingBottom="24dp"/>
+
+        <!-- Upstream proxy type -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Upstream proxy type:" android:textColor="#cccccc" android:textSize="14sp"/>
+        <Spinner
+            android:id="@+id/sp_type"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#3a2a4c"
+            android:focusable="true"/>
+
+        <!-- Upstream Host -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Upstream proxy host:" android:textColor="#cccccc" android:textSize="14sp"
+            android:paddingTop="12dp"/>
+        <EditText android:id="@+id/et_host"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="*.*.*.*" android:textColor="#ffffff" android:backgroundTint="#3a2a4c"
+            android:inputType="text" android:singleLine="true" android:padding="10dp"/>
+
+        <!-- Upstream Port -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Upstream proxy port:" android:textColor="#cccccc" android:textSize="14sp"
+            android:paddingTop="12dp"/>
+        <EditText android:id="@+id/et_port"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="1080" android:textColor="#ffffff" android:backgroundTint="#3a2a4c"
+            android:inputType="number" android:singleLine="true" android:padding="10dp"/>
+
+        <!-- Username -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Username (optional):" android:textColor="#cccccc" android:textSize="14sp"
+            android:paddingTop="12dp"/>
+        <EditText android:id="@+id/et_user"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="leave empty if no auth" android:textColor="#ffffff"
+            android:backgroundTint="#3a2a4c" android:inputType="text"
+            android:singleLine="true" android:padding="10dp"/>
+
+        <!-- Password -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Password (optional):" android:textColor="#cccccc" android:textSize="14sp"
+            android:paddingTop="12dp"/>
+        <EditText android:id="@+id/et_pass"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="leave empty if no auth" android:textColor="#ffffff"
+            android:backgroundTint="#3a2a4c" android:inputType="textPassword"
+            android:singleLine="true" android:padding="10dp"/>
+
+        <!-- Local listen port -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Local proxy port (set this on your TV box Wi-Fi):"
+            android:textColor="#cccccc" android:textSize="14sp" android:paddingTop="12dp"/>
+        <EditText android:id="@+id/et_listen_port"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="8080" android:textColor="#ffffff" android:backgroundTint="#3a2a4c"
+            android:inputType="number" android:singleLine="true" android:padding="10dp"/>
+
+        <!-- Buttons -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingTop="20dp">
+            <Button android:id="@+id/btn_start"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:text="▶  START" android:textColor="#ffffff"
+                android:backgroundTint="#7733cc" android:focusable="true"/>
+            <View android:layout_width="12dp" android:layout_height="wrap_content"/>
+            <Button android:id="@+id/btn_stop"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:text="■  STOP" android:textColor="#ffffff"
+                android:backgroundTint="#cc3333" android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- Status -->
+        <TextView android:id="@+id/tv_status"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Idle. Enter settings and press START."
+            android:textColor="#bb88ff" android:textSize="13sp"
+            android:fontFamily="monospace" android:paddingTop="20dp"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+</ScrollView>
