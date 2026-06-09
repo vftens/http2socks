@@ -11,6 +11,12 @@ superpuperproxy_android/bin/
 android/buildozer_build*.log
 superpuperproxy_android/buildozer_build*.log
 
+# Gradle local SDK paths (machine-specific, not for version control)
+local.properties
+**/local.properties
+**/.gradle/
+**/build/
+
 # Python
 __pycache__/
 *.pyc
